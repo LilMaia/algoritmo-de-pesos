@@ -1,7 +1,7 @@
-#TCC sobre Algoritmos Evolucionários em Jogos Retro
+# TCC sobre Algoritmos Evolucionários em Jogos Retro
 Este projeto implementa um algoritmo evolucionário em jogos retro usando a biblioteca import retro. O objetivo do projeto é treinar uma população de agentes para jogar o jogo "DaffyDuckTheMarvinMissions-Snes" e obter a maior pontuação possível.
 
-#Arquivos
+# Arquivos
 
 train.py: este arquivo contém o código principal do projeto. Ele define a função train(), que treina a população no ambiente especificado, e a função main(), que permite ao usuário escolher entre testar a geração atual, continuar a evolução ou sair do programa.
 
@@ -11,7 +11,7 @@ hyperparameters.py: este arquivo define os hiperparâmetros do algoritmo evoluti
 
 genetic_algorithm.py: este arquivo contém as funções principais do algoritmo evolutivo, como avaliar o desempenho dos membros da população, selecionar os membros mais aptos e gerar uma nova população.
 
-#Uso
+# Uso
 
 Para executar o treinamento da população, execute o seguinte comando:
 
@@ -21,7 +21,7 @@ O programa iniciará com um menu que permitirá ao usuário escolher entre testa
 
 Os pesos da população atual serão salvos em um arquivo chamado population.npz.
 
-#Requisitos
+# Requisitos
 
 Este projeto requer a biblioteca import retro e a biblioteca padrão do Python. Para instalar a biblioteca import retro, execute o seguinte comando:
 
