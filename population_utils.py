@@ -3,7 +3,7 @@ import numpy as np
 # função para salvar a população atual
 def save_population(population, filename):
     with open(filename, 'wb') as f:
-        np.savez('population.npz', *population)
+        np.savez(filename, *population)
 
 # função para carregar a população de um arquivo
 def load_population(filename):
