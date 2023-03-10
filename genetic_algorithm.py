@@ -1,6 +1,5 @@
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
-from hyperparameters import pop_size
 
 def evaluate_fitness(env, pop_weights):
     """
@@ -20,7 +19,7 @@ def evaluate_fitness(env, pop_weights):
         fitness_list.append(episode_reward)
     return fitness_list
     
-def select_elite(pop_weights, fitness_list):
+def select_elite(pop_weights, fitness_list, pop_size):
     """
     Seleciona os membros mais aptos da população, com base na lista de pontuação.
     Retorna os pesos dos membros mais aptos.

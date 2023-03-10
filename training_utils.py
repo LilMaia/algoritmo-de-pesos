@@ -1,10 +1,9 @@
 import numpy as np
 from population_utils import save_population, load_population
-from hyperparameters import pop_size, n_generations, mutation_rate
 from genetic_algorithm import evaluate_fitness, select_elite, generate_new_population
 from plotting_utils import plota_pontuaçao
 
-def treino(env, filename):
+def treino(env, filename, pop_size, n_generations, mutation_rate):
     """
     Treina a população no ambiente env, salvando os pesos em filename.
     """
@@ -28,7 +27,7 @@ def treino(env, filename):
             # Avalia o fitness de cada indivíduo na população
             fitness_list = evaluate_fitness(env, pop_weights)
             # Seleciona os indivíduos mais aptos
-            elite_weights = select_elite(pop_weights, fitness_list)
+            elite_weights = select_elite(pop_weights, fitness_list, pop_size)
             # Gera uma nova população a partir dos indivíduos selecionados
             new_weights = generate_new_population(elite_weights, mutation_rate, env)
             # Substitui a população anterior pela nova população
