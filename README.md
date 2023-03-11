@@ -15,7 +15,7 @@ genetic_algorithm.py: este arquivo contém as funções principais do algoritmo 
 
 Para executar o treinamento da população, execute o seguinte comando:
 
-python train.py
+python main.py
 
 O programa iniciará com um menu que permitirá ao usuário escolher entre testar a geração atual, continuar a evolução ou sair do programa.
 
