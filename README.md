@@ -1,5 +1,5 @@
 # TCC sobre Algoritmos Evolucionários em Jogos Retro
-Este projeto implementa um algoritmo evolucionário em jogos retro usando a biblioteca import retro. O objetivo do projeto é treinar uma população de agentes para jogar o jogo "DaffyDuckTheMarvinMissions-Snes" e obter a maior pontuação possível.
+Este projeto implementa um algoritmo evolucionário em jogos retro usando a biblioteca retro. O objetivo do projeto é treinar uma população de agentes para jogar o jogo "DaffyDuckTheMarvinMissions-Snes" e obter a maior pontuação possível.
 
 # Arquivos
 
