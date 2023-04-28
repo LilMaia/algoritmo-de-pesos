@@ -2,21 +2,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Conv2D
 
 def criar_modelo(ambiente):
-    """
-    Esta função cria um modelo de rede neural para ser usado em um ambiente de aprendizado
-    por reforço. O modelo é construído com as seguintes camadas:
-
-    Três camadas convolucionais com 32, 64 e 64 filtros, respectivamente, tamanhos de kernel
-    de 8, 4 e 3, respectivamente, funções de ativação ReLU e passos de 4, 2 e 1, respectivamente.
-    
-    Uma camada Flatten para transformar a saída das camadas convolucionais em um vetor.
-    Uma camada Dense com 512 unidades e função de ativação ReLU.
-    Uma camada Dense com o número de unidades igual ao número de ações disponíveis no ambiente
-    e função de ativação linear.
-    
-    A entrada do modelo é uma observação do ambiente (uma imagem) e a saída é um vetor de valores
-    Q que representam a qualidade de cada ação possível no estado atual do ambiente.
-    """
     #Define o formato de entrada da rede neural baseado na forma do espaço de observação do ambiente(uma imagem)
     input_shape = ambiente.observation_space.shape
     #Define o número de ações possíveis que o agente pode tomar, baseado no espaço de ações do ambiente

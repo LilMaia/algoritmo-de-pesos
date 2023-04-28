@@ -42,10 +42,27 @@ def gerar_ação(observação, modelo, pesos):
     """
 
 def criar_pesos_iniciais(tamanho_da_população):
+    # Define as escalas a serem utilizadas
+    escalas = [0.1, 1, 10]
 
-    # Calcula a quantidade de pesos que cada indivíduo terá
-    quantidade_de_pesos = 10
+    # Define as distribuições a serem utilizadas
+    distribuições = [np.random.normal, np.random.uniform, np.random.laplace]
 
-    população = np.random.randn(tamanho_da_população, quantidade_de_pesos)
+    # Define a quantidade de pesos que cada indivíduo terá
+    quantidade_de_pesos = 1000000
+
+    # Inicializa a população com pesos aleatórios
+    população = np.empty((tamanho_da_população, quantidade_de_pesos))
+
+    for i in range(tamanho_da_população):
+        # Seleciona aleatoriamente uma distribuição e uma escala
+        distribuição = np.random.choice(distribuições)
+        escala = np.random.choice(escalas)
+
+        # Gera pesos aleatórios com a distribuição e a escala selecionadas
+        pesos = distribuição(size=quantidade_de_pesos) * escala
+
+        # Adiciona os pesos gerados à população
+        população[i] = pesos
 
     return população
