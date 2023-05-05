@@ -1,3 +1,4 @@
+from tensorflow.keras import initializers
 import numpy as np
 
 def gerar_ação(observação, modelo, pesos):
@@ -23,46 +24,20 @@ def gerar_ação(observação, modelo, pesos):
     return np.reshape(ação, (1,))
 
     """
-    A função criar_pesos_iniciais recebe como entrada um ambiente de aprendizado por reforço,
-    o tamanho da população, um modelo já criado e o número máximo de pesos por agente.
-
     Ela inicializa os pesos do modelo fornecido com valores aleatórios seguindo uma distribuição
     normal, adiciona um ruído gaussiano aos pesos do modelo para diversificar a população e cria
     a população a partir dos pesos do modelo, retornando uma lista de população.
-
-    Essa função é utilizada em algoritmos de otimização por evolução, onde a população
-    é usada para encontrar os melhores pesos para o modelo. Os pesos iniciais da população
-    são gerados a partir dos pesos do modelo fornecido, mas com pequenas alterações aleatórias,
-    o que permite explorar mais o espaço de busca de soluções e aumentar as chances de encontrar um 
-    bom conjunto de pesos para o modelo.
-
-    A função limita a quantidade de pesos por agente a um tamanho máximo definido pela variável max_peso_por_agente.
-    Caso o número de pesos de um agente seja menor que o tamanho máximo, a função adiciona zeros ao final do vetor
-    de pesos para preencher até o tamanho máximo.
     """
 
-def criar_pesos_iniciais(tamanho_da_população):
-    # Define as escalas a serem utilizadas
-    escalas = [0.1, 1, 10]
-
-    # Define as distribuições a serem utilizadas
-    distribuições = [np.random.normal, np.random.uniform, np.random.laplace]
+def criar_pesos_iniciais(tamanho_da_população, modelo):
+    print("Criar pesos iniciais")
+    print(modelo.count_params())
 
     # Define a quantidade de pesos que cada indivíduo terá
-    quantidade_de_pesos = 1000000
-
-    # Inicializa a população com pesos aleatórios
-    população = np.empty((tamanho_da_população, quantidade_de_pesos))
-
-    for i in range(tamanho_da_população):
-        # Seleciona aleatoriamente uma distribuição e uma escala
-        distribuição = np.random.choice(distribuições)
-        escala = np.random.choice(escalas)
-
-        # Gera pesos aleatórios com a distribuição e a escala selecionadas
-        pesos = distribuição(size=quantidade_de_pesos) * escala
-
-        # Adiciona os pesos gerados à população
-        população[i] = pesos
-
+    quantidade_de_pesos = modelo.count_params()
+    
+    initializer = initializers.HeUniform()
+    população = initializer((tamanho_da_população, quantidade_de_pesos))
+    print(população)
+    print("Criar pesos iniciais")
     return população

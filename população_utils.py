@@ -11,7 +11,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
     lista_de_aptidão = []
 
     # Máximo de iterações que o While pode fazer
-    máximo_de_iterações=3000
+    máximo_de_iterações=7000
     
     # Itera sobre cada membro da população e avalia seu desempenho no ambiente
     for i_membro, pesos_do_membro in enumerate(pesos_da_população):
@@ -52,7 +52,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
             estado_atual_do_ambiente, recompensa, concluído, informações_adicionais = ambiente.step(ação)
             
             # Renderiza o ambiente (opcional, apenas para visualização)
-            ambiente.render()
+            #ambiente.render()
             
             # Adiciona a recompensa do passo atual à recompensa total do episódio
             recompensa_do_episódio += recompensa
@@ -62,26 +62,26 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
                 recompensa_do_episódio += 100000
             elif informações_adicionais['score'] == 0:
                 recompensa_do_episódio -= 100
-            elif informações_adicionais['score'] < pontuação_atual:
-                recompensa_do_episódio += 5
-            elif informações_adicionais['score'] == pontuação_atual:
-                recompensa_do_episódio += 10
+            # elif informações_adicionais['score'] < pontuação_atual:
+            #     recompensa_do_episódio -= 50000
+            # elif informações_adicionais['score'] == pontuação_atual:
+            #     recompensa_do_episódio += 10
                 
             # Incrementa a recompensa de acordo com a barra de vida do personagem
             if informações_adicionais['health'] < vida_atual:
-                recompensa_do_episódio += 5
-            elif informações_adicionais['health'] > vida_atual: 
-                recompensa_do_episódio += 20
-            elif informações_adicionais['health'] == vida_atual: 
-                recompensa_do_episódio += 10
+                recompensa_do_episódio -= 500
+            # elif informações_adicionais['health'] > vida_atual: 
+            #     recompensa_do_episódio += 20
+            # elif informações_adicionais['health'] == vida_atual: 
+            #     recompensa_do_episódio += 10
                 
             # Incrementa a recompensa de acordo com a quantidade de vidas(tentativas) do personagem
             if informações_adicionais['lives'] < quantidade_de_vidas:
-                recompensa_do_episódio += 5
-            elif informações_adicionais['lives'] > quantidade_de_vidas: 
-                recompensa_do_episódio += 20
-            elif informações_adicionais['lives'] == quantidade_de_vidas: 
-                recompensa_do_episódio += 10
+                recompensa_do_episódio -= 50000
+            # elif informações_adicionais['lives'] > quantidade_de_vidas: 
+            #     recompensa_do_episódio += 20
+            # elif informações_adicionais['lives'] == quantidade_de_vidas: 
+            #     recompensa_do_episódio += 10
             
             # Pegando a pontuação atual da iteração para usar de comparativo na proxima iteração
             pontuação_atual = informações_adicionais['score']

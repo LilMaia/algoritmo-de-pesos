@@ -5,7 +5,7 @@ from teste import testar_geração
 from modelo import criar_modelo
 
 # define os hiperparâmetros do algoritmo evolutivo
-tamanho_da_população = 20
+tamanho_da_população = 25
 número_de_gerações = 1000
 taxa_de_mutação = 0.05
 taxa_de_cruzamento = 0.5

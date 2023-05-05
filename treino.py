@@ -26,7 +26,7 @@ def treino(ambiente, nome_do_arquivo, tamanho_da_população, número_de_geraç�
         print(f"População carregada de {nome_do_arquivo}")
     except FileNotFoundError:
         # Se o arquivo não existe, cria uma nova população
-        pesos_da_população = criar_pesos_iniciais(tamanho_da_população)
+        pesos_da_população = criar_pesos_iniciais(tamanho_da_população, modelo)
         print(f"Arquivo {nome_do_arquivo} não encontrado. Iniciando uma nova população.")
 
     # Loop pelas gerações
