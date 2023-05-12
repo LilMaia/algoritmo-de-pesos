@@ -1,5 +1,4 @@
 import numpy as np
-
 from armazenamento import salvar_população, carregar_população
 from algoritmo_genético import gerar_nova_população
 from algoritmo_genético_utils import selecionar_elites
@@ -7,15 +6,7 @@ from plotagem import plota_pontuação
 from modelo_utils import criar_pesos_iniciais
 from população_utils import avaliar_aptidão
 
-def treino(ambiente, nome_do_arquivo, tamanho_da_população, número_de_gerações, taxa_de_mutação, taxa_de_cruzamento, modelo):
-    """
-    A função começa tentando carregar uma população previamente salva em um arquivo. 
-    Se o arquivo não existir, uma nova população é criada aleatoriamente. Em seguida,
-    ela itera sobre o número de gerações especificado e para cada geração, avalia
-    o fitness de cada indivíduo na população, seleciona os indivíduos mais aptos,
-    gera uma nova população a partir dos indivíduos selecionados, substitui a população
-    anterior pela nova população e armazena as pontuações máxima e média da geração atual
-    """
+def treino(ambiente, nome_do_arquivo, tamanho_da_população, número_de_gerações, taxa_de_mutação, modelo):
     # Inicia as listas para armazenar as pontuações máximas e médias de cada geração
     pontuações_máximas = []
     média_das_pontuações = []
@@ -41,7 +32,7 @@ def treino(ambiente, nome_do_arquivo, tamanho_da_população, número_de_geraç�
             # Seleciona os indivíduos mais aptos
             elite_pesos = selecionar_elites(pesos_da_população, lista_de_aptidão, tamanho_da_população)
             # Gera uma nova população a partir dos indivíduos selecionados
-            novos_pesos = gerar_nova_população(elite_pesos, taxa_de_mutação, taxa_de_cruzamento, tamanho_da_população)
+            novos_pesos = gerar_nova_população(elite_pesos, taxa_de_mutação, tamanho_da_população)
             # Substitui a população anterior pela nova população
             pesos_da_população = novos_pesos
 
@@ -52,7 +43,7 @@ def treino(ambiente, nome_do_arquivo, tamanho_da_população, número_de_geraç�
             média_das_pontuações.append(média_de_aptidão)
 
             # Imprime a pontuação máxima da geração atual
-            print(f'Geração {i_geração}: Max Fitness = {aptidão_máxima}')
+            print(f'Geração {i_geração}: Max Fitness = {aptidão_máxima} e Pontuação Média =  {média_das_pontuações}')
 
             # Salva a população atual no arquivo
             salvar_população(pesos_da_população, nome_do_arquivo)

@@ -1,33 +1,41 @@
-from tensorflow.keras import initializers
+import tensorflow
 import numpy as np
+from tensorflow.keras import initializers
 
-def gerar_ação(observação, modelo, pesos):
-    """
-    Essa função gera uma ação a ser tomada com base na observação do ambiente,
-    no modelo de rede neural e nos pesos do modelo.
-    Primeiro, a observação é ajustada para ter a dimensão esperada pelo modelo.
-    Em seguida, o modelo é usado para realizar a predição dos Q-values (melhores ações)
-    para cada ação possível a partir da observação dada e dos pesos do modelo.
-    Finalmente, a função retorna a ação com o maior Q-value como uma matriz 
-    multidimensional com um único elemento.
-    """
-    # Ajusta a observação para ter a dimensão esperada pelo modeloo
+def gerar_ação(observação, modelo, pesos_do_membro, atualizar_pesos):
+    tensorflow.keras.utils.disable_interactive_logging()
+    
+    # Ajusta a observação para ter a dimensão esperada pelo modelo
     observação = np.expand_dims(observação, axis=0)
+    
+    if(atualizar_pesos == True):
+        # Convertendo os parametros para que funcionem na função modelo.set_weights
+        shapes_pesos_modelo = [peso.shape for peso in modelo.get_weights()]
+        pesos_organizados = []
+        indice_peso = 0
 
-    # Realiza a predição utilizando o modeloo e os pesos fornecidos
-    melhores_ações = modelo(observação, pesos)
+        for shape in shapes_pesos_modelo:
+            tamanho_peso = np.prod(shape)
+            pesos_peso = np.array(pesos_do_membro[indice_peso:indice_peso + tamanho_peso]).reshape(shape)
+            pesos_organizados.append(pesos_peso)
+            indice_peso += tamanho_peso
 
-    # Seleciona a ação com a maior pontuação mais provável
-    ação = np.argmax(melhores_ações)
+        print(f"Pesos atualizados !!!")
+        modelo.set_weights(pesos_organizados)
+        
+    # Realiza a predição utilizando o modelo atualizado com os pesos do membro
+    melhores_ações = modelo.predict(observação)
 
-    # Retorna a ação como uma matriz multidimensional com um único elemento
-    return np.reshape(ação, (1,))
+    # Define um limiar (threshold) para converter as probabilidades em 0s e 1s
+    limiar = 0.5
 
-    """
-    Ela inicializa os pesos do modelo fornecido com valores aleatórios seguindo uma distribuição
-    normal, adiciona um ruído gaussiano aos pesos do modelo para diversificar a população e cria
-    a população a partir dos pesos do modelo, retornando uma lista de população.
-    """
+    # Converte as probabilidades em 0s e 1s usando o limiar
+    ações_binárias = [1 if p > limiar else 0 for p in melhores_ações[0]]
+
+    # Converte a lista em um array numpy
+    ações_binárias = np.array(ações_binárias)
+
+    return ações_binárias
 
 def criar_pesos_iniciais(tamanho_da_população, modelo):
     print("Criar pesos iniciais")
@@ -38,6 +46,5 @@ def criar_pesos_iniciais(tamanho_da_população, modelo):
     
     initializer = initializers.HeUniform()
     população = initializer((tamanho_da_população, quantidade_de_pesos))
-    print(população)
     print("Criar pesos iniciais")
     return população
