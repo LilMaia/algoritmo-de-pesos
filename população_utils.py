@@ -42,6 +42,8 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
                 if random.random() < 0.7:
                     #print(f"Ação pensada")
                     ação = gerar_ação(estado_atual_do_ambiente, modelo, pesos_do_membro, atualizar_pesos)
+                    # Atualizar pesos recebe falso, para não atualizar os pesos do modelo com o do agente mais de uma vez
+                    atualizar_pesos = False
                     #print(ação)
                 else:
                     ação = ambiente.action_space.sample()
@@ -82,9 +84,6 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
             
             # Pegando a quantidade de vidas que o agente possui a cada iteração
             quantidade_de_vidas = informações_adicionais['lives']
-            
-            # Atualiza pesos recebe falso, para não atualizar os pesos do modelo com o do agente mais de uma vez
-            atualizar_pesos = False
             
             # Incrementa o contador
             iterações += 1
