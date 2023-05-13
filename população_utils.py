@@ -57,7 +57,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
             estado_atual_do_ambiente, recompensa, concluído, informações_adicionais = ambiente.step(ação)
             
             # Renderiza o ambiente (opcional, apenas para visualização)
-            ambiente.render()
+            #ambiente.render()
             
             # Adiciona a recompensa do passo atual à recompensa total do episódio
             recompensa_do_episódio += recompensa
