@@ -1,32 +1,32 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras.applications.inception_v3 import InceptionV3
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Dropout
+from tensorflow.keras.models import Model
 
 def criar_modelo(ambiente):
     input_shape = ambiente.observation_space.shape
     número_de_ações = 12
+
+    # Carrega a rede Inception pré-treinada sem a camada de saída
+    base_model = InceptionV3(weights='imagenet', include_top=False, input_shape=input_shape)
+
+    # Define o atributo trainable das camadas convolucionais da rede Inception como False
+    for layer in base_model.layers:
+        if not isinstance(layer, Dense):
+            layer.trainable = False
+
+    # Adiciona uma camada de pooling global e duas camadas densas antes da camada de saída
+    x = base_model.output
+    x = GlobalAveragePooling2D()(x)
+    x = Dense(1024, activation='relu')(x)
+    x = Dropout(0.25)(x)
+    x = Dense(512, activation='relu')(x)
+    x = Dropout(0.5)(x)
+    predictions = Dense(número_de_ações, activation='sigmoid')(x)
+
+    # Cria o modelo final
+    modelo = Model(inputs=base_model.input, outputs=predictions)
     
-    # Cria um modelo sequencial utilizando camadas convolucionais e totalmente conectadas.
-    modelo = Sequential([
-            Conv2D(32, 3, strides=1, activation='relu', input_shape=input_shape),
-            Conv2D(32, 3, strides=1, activation='relu'),
-            MaxPooling2D(pool_size=(2, 2)),
-            Conv2D(64, 3, strides=1, activation='relu'),
-            Conv2D(64, 3, strides=1, activation='relu'),
-            MaxPooling2D(pool_size=(2, 2)),
-            Conv2D(128, 3, strides=1, activation='relu'),
-            Conv2D(128, 3, strides=1, activation='relu'),
-            MaxPooling2D(pool_size=(2, 2)),
-            Conv2D(256, 3, strides=1, activation='relu'),
-            Conv2D(256, 3, strides=1, activation='relu'),
-            MaxPooling2D(pool_size=(2, 2)),
-            Conv2D(512, 3, strides=1, activation='relu'),
-            Conv2D(512, 3, strides=1, activation='relu'),
-            MaxPooling2D(pool_size=(2, 2)),
-            Flatten(),
-            Dense(2048, activation='relu'),
-            Dense(1024, activation='relu'),
-            Dense(número_de_ações, activation='sigmoid')
-        ])
-        
+    print(f"Quantidade de parâmetros do modelo criação: {modelo.count_params()}")
+
     # Retorna o modelo criado
     return modelo

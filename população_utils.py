@@ -37,9 +37,12 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
         # Enquanto o episódio não terminar e o número máximo de iterações não for atingido, executa a ação sugerida pela rede neural e coleta a recompensa
         while not concluído and iterações < máximo_de_iterações:
             
+            if iterações == 3000 :
+                print(f"ações pensadas")        
+            
             if iterações < 3000 :                  
                 # Gera uma ação para o estado atual do ambiente utilizando a rede neural e os pesos do membro atual com 90% de chance
-                if random.random() < 0.7:
+                if random.random() < 0.9:
                     #print(f"Ação pensada")
                     ação = gerar_ação(estado_atual_do_ambiente, modelo, pesos_do_membro, atualizar_pesos)
                     # Atualizar pesos recebe falso, para não atualizar os pesos do modelo com o do agente mais de uma vez
@@ -48,7 +51,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
                 else:
                     ação = ambiente.action_space.sample()
                     #print(f"Ação aleatoria : {ação}")
-                    #ação = gerar_ação(estado_atual_do_ambiente, modelo, pesos=pesos_do_membro)
+                    #ação = gerar_ação(estado_atual_do_ambiente, modelo, pesos_do_membro, atualizar_pesos)
             else :
                 ação = gerar_ação(estado_atual_do_ambiente, modelo, pesos_do_membro, atualizar_pesos)
                 #print(ação)
@@ -87,6 +90,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
             
             # Incrementa o contador
             iterações += 1
+            
         
         # Armazena a pontuação do membro atual na lista de pontuações da população
         print(f"Recompensa do episódio : {recompensa_do_episódio}")

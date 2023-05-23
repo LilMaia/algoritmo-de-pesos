@@ -23,9 +23,9 @@ def gerar_nova_população(elite_pesos, taxa_de_mutação, tamanho_da_populaçã
         novo_indivíduo = mutação(novo_indivíduo, taxa_de_mutação)
         novos_pesos.append(novo_indivíduo)
 
-    novos_pesos = np.vstack(novos_pesos)
+    # Adicionando os pais à lista de novos pesos
+    novos_pesos = np.vstack([elite_pesos] + novos_pesos)
     
     print(f"---------------------------------------------------------------------------")
     print(f"Tamanho novos pesos : {novos_pesos.size}")
-
     return novos_pesos[:tamanho_da_população]
