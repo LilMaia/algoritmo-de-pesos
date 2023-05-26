@@ -14,7 +14,7 @@ def criar_modelo(ambiente):
         if not isinstance(layer, Dense):
             layer.trainable = False
 
-    # Adiciona uma camada de pooling global e duas camadas densas antes da camada de saída
+
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
     x = Dense(1024, activation='relu')(x)
@@ -25,8 +25,5 @@ def criar_modelo(ambiente):
 
     # Cria o modelo final
     modelo = Model(inputs=base_model.input, outputs=predictions)
-    
-    print(f"Quantidade de parâmetros do modelo criação: {modelo.count_params()}")
 
-    # Retorna o modelo criado
     return modelo

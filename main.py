@@ -10,13 +10,10 @@ taxa_de_mutação = 0.05
 
 if __name__ == '__main__':
     
-    # Cria o ambiente do jogo
     ambiente = retro.make(game='DaffyDuckTheMarvinMissions-Snes')
     
-    # Define o nome do arquivo para salvar a população
     nome_do_arquivo = 'população.npz'
 
-    # Cria o modelo para avaliar as ações e/ou gerar os pesos iniciais
     modelo = criar_modelo(ambiente)
     
     while True:

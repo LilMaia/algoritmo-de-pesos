@@ -3,10 +3,8 @@ from modelo_utils import gerar_ação
 
 def avaliar_aptidão(ambiente, pesos_da_população, modelo):
     
-    # Inicia uma lista vazia para armazenar as pontuações dos membros da população
     lista_de_aptidão = []
 
-    # Máximo de iterações que o While pode fazer
     máximo_de_iterações=3000
     
     # Itera sobre cada membro da população e avalia seu desempenho no ambiente

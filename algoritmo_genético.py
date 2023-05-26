@@ -1,8 +1,5 @@
 import numpy as np
 
-print(f"---------------------------------------------------------------------------")
-print(f"Algoritmo genético:")
-
 def cruzamento_uniforme(pai1, pai2):
     indices = np.random.choice([0, 1], size=pai1.shape[0])
     filho = np.where(indices, pai1, pai2)
@@ -26,6 +23,4 @@ def gerar_nova_população(elite_pesos, taxa_de_mutação, tamanho_da_populaçã
     # Adicionando os pais à lista de novos pesos
     novos_pesos = np.vstack([elite_pesos] + novos_pesos)
     
-    print(f"---------------------------------------------------------------------------")
-    print(f"Tamanho novos pesos : {novos_pesos.size}")
     return novos_pesos[:tamanho_da_população]
