@@ -13,6 +13,8 @@ Após avaliados todos os 25 agentes, a função retorna uma lista com a pontuaç
 
 Por fim, após a realização do cruzamento e da mutação, é criada uma nova população. Essa população combina os indivíduos da elite original com os novos indivíduos gerados por cruzamento e mutação. A cada execução do algoritmo, as pontuações máxima e média de cada geração são calculadas e armazenadas. Quando o programa é interrompido, os dados são exibidos graficamente para o usuário.
 
+# Configuração do ambiente
+
 Para a realização deste trabalho, foi necessário criar e configurar um ambiente de desenvolvimento local em uma pasta no Windows 11. Utilizou-se o Python na versão 3.8 e as biblioteca Gym na versão 0.21.0 e Gym Retro na versão 0.8.0. É importante destacar que versões mais recentes das bibliotecas mencionadas são incompatíveis com versões anteriores.
 
 Após a instalação do ambiente, é preciso obter uma ROM do jogo que se deseja utilizar para os testes. Essa ROM precisa ter a mesma SHA definida pelo Gym Retro em suas instalações para o jogo em questão. Cabe ressaltar que nem todos os jogos são suportados pelo Gym Retro.
