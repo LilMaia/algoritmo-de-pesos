@@ -5,7 +5,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
     
     lista_de_aptidão = []
 
-    máximo_de_iterações=3000
+    máximo_de_iterações=4001
     
     # Itera sobre cada membro da população e avalia seu desempenho no ambiente
     for pesos_do_membro in pesos_da_população:
@@ -58,15 +58,15 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
             if informações_adicionais['lives'] < quantidade_de_vidas:
                 recompensa_do_episódio -= 50000
              
-            if iterações <= 1 :
+            if iterações <= 1 or iterações % 1001 == 0:
                 pontuação_inicial = informações_adicionais['score']
                 vida_inicial = informações_adicionais['health']
                 quantidade_de_vida_inicial = informações_adicionais['lives']
-                
-            if iterações >= 2998 :
-                if pontuação_atual == pontuação_inicial and vida_atual == vida_inicial and quantidade_de_vidas == quantidade_de_vida_inicial :
+
+            if iterações % 1000 == 0:
+                if pontuação_atual == pontuação_inicial and vida_atual == vida_inicial and quantidade_de_vidas == quantidade_de_vida_inicial:
                     recompensa_do_episódio -= 300000
-    
+
             # Pegando a pontuação atual da iteração para usar de comparativo na proxima iteração
             pontuação_atual = informações_adicionais['score']
             
