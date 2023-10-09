@@ -10,6 +10,14 @@ def mutação(indivíduo, taxa_de_mutação):
         indivíduo += np.random.normal(0, 0.1, size=indivíduo.shape)
     return indivíduo
 
+# def calcular_diversidade(população):
+#     diversidade = []
+#     for i in range(len(população)):
+#         for j in range(i+1, len(população)):
+#             distância_euclidiana = np.linalg.norm(população[i] - população[j])
+#             diversidade.append(distância_euclidiana)
+#     return diversidade
+
 def gerar_nova_população(elite_pesos, taxa_de_mutação, tamanho_da_população):
     elite_pesos = np.vstack(elite_pesos)
     novos_pesos = []
@@ -22,5 +30,12 @@ def gerar_nova_população(elite_pesos, taxa_de_mutação, tamanho_da_populaçã
 
     # Adicionando os pais à lista de novos pesos
     novos_pesos = np.vstack([elite_pesos] + novos_pesos)
+
+    # # Calcular diversidade entre os indivíduos
+    # diversidade = calcular_diversidade(novos_pesos)
+
+    # # Imprimir os resultados na tela
+    # print("Diversidade entre os indivíduos gerados:")
+    # print(diversidade)
     
     return novos_pesos[:tamanho_da_população]

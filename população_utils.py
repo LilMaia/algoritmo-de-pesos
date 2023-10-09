@@ -65,7 +65,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
 
             if iterações % 1000 == 0:
                 if pontuação_atual == pontuação_inicial and vida_atual == vida_inicial and quantidade_de_vidas == quantidade_de_vida_inicial:
-                    recompensa_do_episódio -= 300000
+                    recompensa_do_episódio -= 300000   
 
             # Pegando a pontuação atual da iteração para usar de comparativo na proxima iteração
             pontuação_atual = informações_adicionais['score']
@@ -81,6 +81,7 @@ def avaliar_aptidão(ambiente, pesos_da_população, modelo):
         
         # Armazena a pontuação do membro atual na lista de pontuações da população
         print(f"Recompensa do episódio : {recompensa_do_episódio}")
+        print(f"Pontuação do agente no jogo : {pontuação_atual}")
         lista_de_aptidão.append(recompensa_do_episódio)
     
     return lista_de_aptidão

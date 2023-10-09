@@ -46,12 +46,24 @@ def gerar_ação(observação, modelo, pesos_do_membro, atualizar_pesos):
 
     return ações_binárias
 
+# def calcular_diversidade(população):
+#     diversidade = []
+#     for i in range(len(população)):
+#         for j in range(i+1, len(população)):
+#             distância_euclidiana = np.linalg.norm(população[i] - população[j])
+#             diversidade.append(distância_euclidiana)
+#     return diversidade
+
 def criar_pesos_iniciais(tamanho_da_população, modelo):
-    
-    # Define a quantidade de pesos que cada indivíduo terá
     quantidade_de_pesos = sum(layer.count_params() for layer in modelo.layers if isinstance(layer, Dense))
-    print(f"Criando pesos iniciais : {quantidade_de_pesos}")
+    print(f"Criando pesos iniciais: {quantidade_de_pesos}")
     initializer = initializers.HeUniform()
     população = initializer((tamanho_da_população, quantidade_de_pesos))
+    
+    # diversidade = calcular_diversidade(população)
+    
+    # # Imprimir os resultados na tela
+    # print("Diversidade entre os indivíduos iniciais:")
+    # print(diversidade)
     
     return população
