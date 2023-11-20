@@ -1,0 +1,241 @@
+Criando pesos iniciais: 2629132
+Arquivo população.npz não encontrado. Iniciando uma nova população.
+-------------------------------------------------------------------------------------
+treino:
+Começando a geração 0
+-------------------------------------------------------------------------------------
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -157600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -161600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Elite indices: [ 5 20 24 11  1  2  3  4  6  7]
+Geração 0: Max Fitness = -157600.0 e Pontuação Média =  [-1208860.0]
+População salva em população.npz na geração 0.
+-------------------------------------------------------------------------------------
+treino:
+Começando a geração 1
+-------------------------------------------------------------------------------------
+Pesos atualizados !!!
+Recompensa do episódio : -157600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -161600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -650600.0
+Pontuação do agente no jogo : 40
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -158100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -161600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -456100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Elite indices: [ 0 15  1 16 19 10  2  3  4  5]
+Geração 1: Max Fitness = -157600.0 e Pontuação Média =  [-1208860.0, -1057900.0]
+População salva em população.npz na geração 1.
+-------------------------------------------------------------------------------------
+treino:
+Começando a geração 2
+-------------------------------------------------------------------------------------
+Pesos atualizados !!!
+Recompensa do episódio : -157600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -158100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -161600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -161600.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -456100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -650600.0
+Pontuação do agente no jogo : 40
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -523100.0
+Pontuação do agente no jogo : 40
+Pesos atualizados !!!
+Recompensa do episódio : 268700.0
+Pontuação do agente no jogo : 70
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -1300100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+Recompensa do episódio : -210100.0
+Pontuação do agente no jogo : 0
+Pesos atualizados !!!
+População salva em população.npz na geração 2.

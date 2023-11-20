@@ -1,6 +1,7 @@
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Dropout
 from tensorflow.keras.models import Model
+import h5py
 
 def criar_modelo(ambiente):
     input_shape = ambiente.observation_space.shape
@@ -14,7 +15,6 @@ def criar_modelo(ambiente):
         if not isinstance(layer, Dense):
             layer.trainable = False
 
-
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
     x = Dense(1024, activation='relu')(x)
@@ -25,5 +25,7 @@ def criar_modelo(ambiente):
 
     # Cria o modelo final
     modelo = Model(inputs=base_model.input, outputs=predictions)
+    
+    modelo.save('modelo.h5')
 
     return modelo
