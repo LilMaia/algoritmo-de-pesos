@@ -1,6 +1,6 @@
 # Algoritmo genético de pesos
 
-
+Este projeto implementa um Algoritmo de Pesos em uma arquitetura de rede neural fixa, utilizando um algoritmo genético. A estrutura da rede inclui uma parte convolucional baseada na arquitetura \textit{InceptionV3} da Google, seguida por camadas densas. O treinamento é realizado por meio de 25 agentes, cada um representando uma população na abordagem genética. Durante o treinamento no jogo \textit{Daffy Duck: The Marvin Missions}, a aptidão de cada agente é avaliada com base em sua pontuação, vidas, barra de vida e ações realizadas. Os melhores agentes são selecionados para reprodução, utilizando cruzamento uniforme e mutação para gerar a próxima geração. O projeto visa criar uma solução adaptativa para treinamento de modelos de aprendizado de máquina.
 
 # Configuração do ambiente
 
